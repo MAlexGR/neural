@@ -1,4 +1,4 @@
 
-# Distribution / packaging
-
+# Sphinx documentation
 _build/
+_build/*
