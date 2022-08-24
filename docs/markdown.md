@@ -25,7 +25,7 @@ that is being called.
 
 Here is a "note" directive:
 
-```{note}
+```{tip}
 Here is a note
 ```
 

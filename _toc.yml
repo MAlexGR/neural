@@ -7,3 +7,4 @@ chapters:
 - file: docs/markdown
 - file: docs/notebooks
 - file: docs/markdown-notebooks
+- file: docs/ml.md
