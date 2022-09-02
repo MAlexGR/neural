@@ -1,52 +1,149 @@
+##########################################################################
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title   : Μικρή εισαγωγή στην ΤΝ
 author  : Αλέξανδρος
 logo    : logo.png
+##########################################################################
 
+
+##########################################################################
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks     : force
+  execute_notebooks     : cache
+##########################################################################
 
+
+##########################################################################
 # Define the name of the latex output file for PDF builds
+# και άλλες ρυθμίσεις latex
 latex                   :
   latex_documents       :
     targetname          : book.tex
   latex_engine          : xelatex
   use_jupyterbook_latex : true
+##########################################################################
 
+
+##########################################################################
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles         :
   - docs/biblio.bib
+###########################################################################
 
+
+###########################################################################
 # Information about where the book exists on the web
 repository      :
-  url           : https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book  : docs  # Optional path to your book, relative to the repository root
-  branch        : master  # Which branch of the repository should be used when creating links (optional)
+  url           : https://github.com/executablebooks/jupyter-book  # Online
+                          # location of your book
 
+  path_to_book  : docs    # Optional path to your book, relative to the
+                          # repository root
+
+  branch        : master  # Which branch of the repository should be used
+                          # when creating links (optional)
+############################################################################
+
+
+###########################################################################
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  use_issues_button     : true
-  use_repository_button : true
+  home_page_in_navbar   : true
+  use_issues_button     : true  # Whether to add an "open an issue" button
+  use_repository_button : true  # Whether to add a link to your
+                                # repository button
+  use_edit_page_button  : false # Whether to add an "edit this page" button
+                                # to pages. If `true`, repository
+                                # information in repository: must be filled
+                                # in
 
 
+html_theme_options :
+  use_sidenotes: true
+##########################################################################
+
+
+###########################################################################
 # Sphinx settings
 sphinx:
   config:
-    language         : el
-    latex_show_urls  : "footnote"
+    language            : el
+    latex_show_urls     : "footnote"
+    latex_show_pagerefs : true
+    latex_elements      :
+      papersize        : a4paper
+      pointsize        : 12pt
+      fontpkg          : '\usepackage{amsmath,amsfonts,amssymb,amsthm}'
+      # Sonny, Lenny, Glenn, Conny, Rejne, Bjarne and Bjornstrup
+      fncychap         : '\usepackage[Sonny]{fncychap}'
+      preamble         : '
+        \usepackage{graphicx}        
+        \usepackage{setspace}
+        \onehalfspacing        
+        \usepackage{enumitem}
+          \setlist{noitemsep,nolistsep,nosep}
+        \setmainfont{FiraSans}
+        [
+          Path           = ./fonts/ ,
+          Extension      = .otf ,
+          UprightFont    = *-Light ,
+          BoldFont       = *-SemiBold ,
+          ItalicFont     = *-LightItalic ,
+          BoldItalicFont = *-SemiBoldItalic ,
+        ]
+        '
+      sphinxsetup      : '
+        shadowsize         = 0pt,
+        shadowsep          = 4pt,
+        VerbatimColor      = {RGB}{245, 246, 250},
+        noteborder         = 1pt,
+        warningborder      = 1pt,
+        dangerborder       = 1pt,
+        noteBorderColor    = {RGB}{61, 133, 198},
+        warningBorderColor = {RGB}{255, 153, 0},
+        dangerBorderColor  = {RGB}{255, 100, 97}
+        '
+    mathjax_path        : https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   extra_extensions :
   - sphinx_jupyterbook_latex
   - sphinx_proof
+############################################################################
 
+
+###########################################################################
+# parse settings
 parse:
   myst_enable_extensions:
-    - deflist
-    - amsmath
-    - dollarmath
-    - linkify
-    - colon_fence
+    - deflist         # επιτρέπει τη χρήση λιστών ορισμού
+    - amsmath         # επιτρέπει την απευθείας χρήση εξισώσεων με χρήση
+                      # LaTeX, μέσω του πακέτου amsmath.
+
+    - colon_fence     # επιτρέπει τη χρήση ::: (colons) σαν οριοθέτες
+                      # για να υποδηλώνουν οριοθέτηση κώδικα, αντί των
+                      # ``` [1]
+    - dollarmath      # enable support for `$$` and `$` syntax for math
+                      # blocks
+    
+    - html_admonition # Notes, warnings, and other admonitions. [2]
+
+    - html_image      # MyST allows for directives to be used such as
+                      # {image} and {figure}
+    - linkify         # automatically identify “bare” web URLs and add
+                      # hyperlinks
+    - replacements    # automatically convert some common typographic
+                      # texts (e.g (tm), (c) )
+    - smartquotes     # automatically convert standard quotations to
+                      # their opening/closing variants:
+    - substitution    # will allow you to add substitutions (variables)
+                      # in markdown
+    
+# [1] Using colons instead of back-ticks has the benefit of allowing the
+# content to be rendered correctly, when you are working in any standard
+# Markdown editor.
+#
+# [2] See https://jupyterbook.org/content/content-blocks.html?highlight=admonition#notes-warnings-and-other-admonitions
+############################################################################
