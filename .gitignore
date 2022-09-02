@@ -2,3 +2,4 @@
 # Sphinx documentation
 _build/
 _build/*
+.vscode/settings.json

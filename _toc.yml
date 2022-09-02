@@ -3,8 +3,19 @@
 
 format: jb-book
 root: docs/intro
-chapters:
-- file: docs/markdown
-- file: docs/notebooks
-- file: docs/markdown-notebooks
-- file: docs/ml.md
+
+parts:
+- caption: ΤΝ
+  chapters:
+  - file: docs/markdown
+  - file: docs/stat-prob/probability.md
+  - file: docs/markdown-notebooks
+  - file: docs/ml.md
+
+- caption: Μαθηματικό Υπόβαθρο
+  chapters:
+  - file: docs/stat-prob/combinatorics
+  - file: docs/stat-prob/sets
+  - file: docs/stat-prob/normal-dist
+  
+  
