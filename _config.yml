@@ -12,9 +12,16 @@ logo    : logo.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks     : cache
+  execute_notebooks     : force #cache
 ##########################################################################
-
+exclude_patterns:
+  -  _build
+  - Thumbs.db
+  - .DS_Store
+  - "**.ipynb_checkpoints"
+  - "figures"
+  - "datasets"
+  - "README.md"
 
 ##########################################################################
 # Define the name of the latex output file for PDF builds
@@ -61,9 +68,10 @@ html:
                                 # information in repository: must be filled
                                 # in
 
-
-html_theme_options :
-  use_sidenotes: true
+# Δε λειτουργούν!!!
+#html_theme_options :
+#  use_sidenotes: true
+#  use_download_button: true
 ##########################################################################
 
 
@@ -71,30 +79,31 @@ html_theme_options :
 # Sphinx settings
 sphinx:
   config:
-    language            : el
-    latex_show_urls     : "footnote"
-    latex_show_pagerefs : true
-    latex_elements      :
+    # Αναπάντεχη λειτουργία. Προσοχή!
+    #html_theme_options:
+      #use_sidenotes: true
+    language                  : el
+    
+    # Ρυθμίσεις latex απευθείας στη Sphinx
+    latex_show_urls           : "footnote"
+    latex_show_pagerefs       : true
+    latex_elements            :
       papersize        : a4paper
-      pointsize        : 12pt
-      fontpkg          : '\usepackage{amsmath,amsfonts,amssymb,amsthm}'
+      pointsize        : 10pt
+      fontpkg          : '
+        \usepackage{amsmath, amsfonts, amssymb, amsthm}
+        \usepackage{noto}
+        '
       # Sonny, Lenny, Glenn, Conny, Rejne, Bjarne and Bjornstrup
       fncychap         : '\usepackage[Sonny]{fncychap}'
       preamble         : '
-        \usepackage{graphicx}        
+        \usepackage{microtype}
+        \usepackage{graphicx}
         \usepackage{setspace}
-        \onehalfspacing        
+          \onehalfspacing
         \usepackage{enumitem}
           \setlist{noitemsep,nolistsep,nosep}
-        \setmainfont{FiraSans}
-        [
-          Path           = ./fonts/ ,
-          Extension      = .otf ,
-          UprightFont    = *-Light ,
-          BoldFont       = *-SemiBold ,
-          ItalicFont     = *-LightItalic ,
-          BoldItalicFont = *-SemiBoldItalic ,
-        ]
+        \usepackage{siunitx}
         '
       sphinxsetup      : '
         shadowsize         = 0pt,
@@ -107,10 +116,15 @@ sphinx:
         warningBorderColor = {RGB}{255, 153, 0},
         dangerBorderColor  = {RGB}{255, 100, 97}
         '
+    
+    # Με ερωτηματικό αν χρειάζεται
     mathjax_path        : https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  extra_extensions :
+  
+  # Extentions της Sphinx που θέλουμε να ενεργοποιήσουμε
+  extra_extensions:
   - sphinx_jupyterbook_latex
   - sphinx_proof
+  #- sphinx_examples
 ############################################################################
 
 
