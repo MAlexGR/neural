@@ -4,18 +4,78 @@
 format: jb-book
 root: docs/intro
 
+
 parts:
 - caption: ΤΝ
   chapters:
-  - file: docs/markdown
-  - file: docs/stat-prob/probability.md
-  - file: docs/markdown-notebooks
-  - file: docs/ml.md
+  - file: docs/ai/AI
+  - file: docs/machine-learning/MachineLearning.md
+  - file: docs/deep-learning/DeepLearning
 
+# Το μαθηματικό υπόβαθρο για την ΤΝ
 - caption: Μαθηματικό Υπόβαθρο
   chapters:
-  - file: docs/stat-prob/combinatorics
-  - file: docs/stat-prob/sets
-  - file: docs/stat-prob/normal-dist
+  - file: docs/combinatorics/Combinatorics
+  - file: docs/sets/Sets
+  - file: docs/probability/Probability
+  - file: docs/statistics/NormalDistribution
+
+# Επιστήμη πληροφορίας, αναπαραγωγίσιμη έρευνα κ.λπ.
+- caption: Οργάνωση Επιστημονικής Εργασίας
+  chapters:
+
+  # Αναπαραγώγιμη έρευνα
+  - file: docs/scientific-research/reproducible-research
+
+
+  - file: docs/scientific-research/scientific-intro
+    sections:
+    - file: docs/scientific-research/scientific-computing
+
+  - file: docs/anaconda/anaconda
+
+# Python
+- caption: Python
+  chapters:
+
+  # Δομές δεδομένων
+  - file: docs/python/DataConstructs/data-constructs-intro
+    sections:
+    - file: docs/python/DataConstructs/dictionary
+
+
+# Modules και Libraries της Python
+- caption: Πακέτα Επιστημονικής Ανάλυσης της Python
+  chapters:
   
+  # NumPy
+  - file: docs/numpy/numpy-intro
+    sections:
+    - file: docs/numpy/numpy-basics
+    - file: docs/numpy/numpy-intermediate
+    - file: docs/numpy/numpy-broadcasting
+
+  # Matplotlib  
+  - file: docs/matplotlib/matplotlib-intro
+    sections:
+    - file: docs/matplotlib/matplotlib-basics
+    - file: docs/matplotlib/matplotlib-diagrams
+    - file: docs/matplotlib/matplotlib-animations
+    - file: docs/matplotlib/matplotlib-advanced-layouts
+  
+  # Pandas
+  - file: docs/pandas/pandas-intro
+    sections:
+    - file: docs/pandas/pd-GettingStarted
+    - file: docs/pandas/pd-Series
+    - file: docs/pandas/pd-DataFrames
+    - file: docs/pandas/pandas.md
+    - file: mars-factsheet
+
+# Παραρτήματα
+- caption: Βοηθητικό Υλικό
+  chapters:
+  - file: docs/auxiliary/gloss.md
+  - file: docs/auxiliary/bibliography.md
+
   
