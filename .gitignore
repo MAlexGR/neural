@@ -9,3 +9,4 @@ Exported Items.bib
 
 # Jupyter notebooks checkpoints
 .ipynb_checkpoints
+*/.ipynb_checkpoints/*
