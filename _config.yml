@@ -103,7 +103,6 @@ sphinx:
           \onehalfspacing
         \usepackage{enumitem}
           \setlist{noitemsep,nolistsep,nosep}
-        \usepackage{siunitx}
         '
       sphinxsetup      : '
         shadowsize         = 0pt,
