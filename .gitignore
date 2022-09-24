@@ -3,4 +3,9 @@
 _build/
 _build/*
 .vscode/settings.json
+
+# Zotero temporal file
 Exported Items.bib
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints
