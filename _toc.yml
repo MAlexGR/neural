@@ -38,10 +38,13 @@ parts:
 - caption: Python
   chapters:
 
+  # Βασικές έννοιες
+  - file: docs/Python/Basics/basics-intro
+
   # Δομές δεδομένων
-  - file: docs/python/DataConstructs/data-constructs-intro
+  - file: docs/Python/DataConstructs/data-constructs-intro
     sections:
-    - file: docs/python/DataConstructs/dictionary
+    - file: docs/Python/DataConstructs/dictionary
 
 
 # Modules και Libraries της Python
