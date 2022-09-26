@@ -10,3 +10,10 @@ Exported Items.bib
 # Jupyter notebooks checkpoints
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+
+# Όχι συμπιεσμένα αρχεία
+*/*.tgz
+docs/datasets/housing/housing.tgz
+docs/machine-learning/datasets/housing/housing.tgz
+docs/datasets/housing/housing.tgz
+docs/datasets/housing/housing.csv

@@ -21,7 +21,7 @@ parts:
   - file: docs/statistics/NormalDistribution
 
 # Επιστήμη πληροφορίας, αναπαραγωγίσιμη έρευνα κ.λπ.
-- caption: Οργάνωση Επιστημονικής Εργασίας
+- caption: Οργάνωση Εργασίας
   chapters:
 
   # Αναπαραγώγιμη έρευνα
@@ -34,18 +34,17 @@ parts:
 
   - file: docs/anaconda/anaconda
 
-# Python
-- caption: Python
+# Προγραμματιστικά εργαλεία
+- caption: Εργαλεία Προγραμματισμού
   chapters:
-
-  # Βασικές έννοιες
-  - file: docs/Python/Basics/basics-intro
-
-  # Δομές δεδομένων
-  - file: docs/Python/DataConstructs/data-constructs-intro
+  
+  
+  - file: docs/Python/intro # <-- PYTHON
     sections:
-    - file: docs/Python/DataConstructs/dictionary
-
+    - file: docs/Python/concepts # Ιεραρχικό μοντέλο
+    - file: docs/Python/datatypes # Τύποι δεδομένων
+      sections:
+      - file: docs/Python/dictionaries
 
 # Modules και Libraries της Python
 - caption: Πακέτα Επιστημονικής Ανάλυσης της Python
